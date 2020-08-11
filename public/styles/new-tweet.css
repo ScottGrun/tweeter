@@ -53,3 +53,7 @@
 .primary-btn:focus {
   background-color: #2f80ed;
 }
+
+.danger{
+  color: red;
+}
