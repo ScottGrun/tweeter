@@ -1,0 +1,10 @@
+#main-header{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  background-color: #2F80ED;
+  color: white;
+  background-image: url('../images//topo-pattern.svg');
+}
