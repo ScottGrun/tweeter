@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/tweet-card.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -55,9 +56,30 @@
           <textarea name="text" id="tweet-text"></textarea>
           <div id="new-tweet-footer">
             <button class="primary-btn" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">0</output>
+            <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+
+        <article class="tweet-card">
+          <header>
+            <div>
+              <img class="tweet-author-pic" src="./images/profile-hex.png" />
+              <p class="tweet-author">Ralph Dude</p>
+            </div>
+            <p class="tweet-author-username">@RandomDude123</p>
+          </header>
+          <p class="tweet-body">This the random tweet post thing.</p>
+          <footer>
+            <p name="date-posted" for="tweet-card">10 days ago</p>
+            <div class="tweet-icons-container">
+              <img src="./images/icons/flag.svg" />
+              <img src="./images/icons/retweet.svg" />
+              <img src="./images/icons/like.svg" />
+            </div>
+          </footer>
+        </article>
+
+
       </section>
     </main>
   </body>
