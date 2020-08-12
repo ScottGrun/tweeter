@@ -36,12 +36,16 @@ $(document).ready(function () {
     const parseDate = (unixDate) => {
       var t2 = new Date().getTime();
       var t1 = unixDate;
-      const daysSincePost = parseInt((t2-t1)/(24*3600*1000));
-      if(daysSincePost > 7){
-        return `${new Date(unixDate).toLocaleDateString()}`
+      const daysSincePost = parseInt((t2 - t1) / (24 * 3600 * 1000));
+      if (daysSincePost > 7) {
+        return `${new Date(unixDate).toLocaleDateString()}`;
+      } else if (daysSincePost === 0) {
+        return `Today at ${new Date(unixDate).toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit'
+        })}`;
       }
       return `Tweeped ${daysSincePost} days ago`;
-
     };
     const $tweet = $(`
   <article class="tweet-card">
@@ -67,7 +71,39 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  for (let tweetData of tweets) {
-    $('#main-content-container').append(createTweetElement(tweetData));
-  }
+  const renderTweets = function (tweets) {
+    for (const tweetData of tweets) {
+      $('#main-content-container').append(createTweetElement(tweetData));
+    }
+  };
+
+  renderTweets(tweets);
+
+  $(function () {
+    const $form = $('#new-tweet-form');
+    $form.submit(function (e) {
+      e.preventDefault();
+
+      const data =
+        $('#new-tweet-form').serialize() +
+        `&created_at=${new Date().getTime()}`;
+
+      $.ajax({
+        type: 'POST',
+        url: 'tweets',
+        success: loadTweets(),
+        data
+      });
+
+      console.log(data);
+    });
+  });
+
+  const loadTweets = () => {
+    $.get('tweets', function (data, status) {
+      renderTweets(data);
+    });
+  };
+
+  loadTweets();
 });
