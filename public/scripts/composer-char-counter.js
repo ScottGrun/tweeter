@@ -27,6 +27,7 @@ tweetTextArea.addEventListener('keyup', () => {
     counter.classList.add('danger');
   } else {
     counter.classList.remove('danger');
+
   }
   counter.innerHTML = characterCount;
 });

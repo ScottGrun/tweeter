@@ -57,3 +57,13 @@
 .danger{
   color: red;
 }
+
+#alert-container{
+  display: none;
+  justify-content:  center;
+  background-color: indianred;
+  color: white;
+  margin: 1rem 0;
+  border:  solid 3px red;
+  border-radius: 3px;
+}

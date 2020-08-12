@@ -48,6 +48,9 @@
     <main id="main-content-container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <div id="alert-container">
+          <p id="alert-text">This message is too long !</p>
+        </div>
         <form id="new-tweet-form" method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -56,6 +59,10 @@
             <output name="counter" id="counter" for="tweet-text">140</output>
           </div>
         </form>
+
+        <div id='tweets-container'>
+
+        </div>
 
 
 
