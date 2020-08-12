@@ -27,7 +27,8 @@ article.tweet-card header > div {
 }
 
 .tweet-author-pic {
-  height: 90px;
+  max-height: 90px;
+  padding-right: .5rem;
 }
 
 .tweet-author {
