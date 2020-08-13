@@ -70,15 +70,13 @@ $(document).ready(function () {
 
   $(function () {
     const $form = $('#new-tweet-form');
+
     $form.submit(function (e) {
       e.preventDefault();
 
-      const formData = `${$(
-        '#new-tweet-form'
-      ).serialize()}&created_at=${new Date().getTime()}`;
+      const formData = $('#new-tweet-form').serialize();
 
       const messageLength = $form.children('textarea')[0].value.length;
-      console.log(messageLength);
 
       const errorMessage = $('#alert-container');
       //Error handling for bad tweep inputs
@@ -102,10 +100,10 @@ $(document).ready(function () {
         success: () => {
           $('#tweets-container').empty();
           loadTweets();
-          console.log('hit');
         },
         data: formData
       });
+
     });
   });
 

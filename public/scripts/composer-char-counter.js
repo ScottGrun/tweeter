@@ -21,13 +21,12 @@
 const counter = document.querySelector('#counter');
 const tweetTextArea = document.querySelector('textarea');
 
-tweetTextArea.addEventListener('keyup', () => {
+tweetTextArea.addEventListener('keydown', () => {
   const characterCount = 140 - tweetTextArea.value.length;
   if (characterCount < 0) {
     counter.classList.add('danger');
   } else {
     counter.classList.remove('danger');
-
   }
   counter.innerHTML = characterCount;
 });
