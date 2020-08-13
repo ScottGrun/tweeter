@@ -20,9 +20,9 @@ html {
  */
 
 body {
-  padding-top: 120px;
   color: #545149;
   background-color: #f4f1ec;
+  padding: 0;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -37,11 +37,23 @@ body {
 }
 
 
+@media (min-width: 360px) { 
 
+
+}
 
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) { 
+  
+  body{
+    padding-top: 120px;
+  }
+
+  #navbar{
+    background-color: #4056A1;
+  }
+
   #wrapper {
     margin: 0 24px;
     display: grid;
@@ -53,15 +65,21 @@ body {
     width: 100%;
   }
 
-  header {
-    grid-column: 2 / span 4;
+  #main-header {
+    margin-top: 2rem;
+    grid-column: 1 / span 5;
   }
 
   main{
-    grid-column: 7 / span 5;
+    grid-column: 7 / span 6;
   }
 
- 
-  
+
 }
 
+@media (min-width: 1440px) { 
+  #wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

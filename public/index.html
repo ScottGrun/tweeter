@@ -13,7 +13,9 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
+
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="./styles/tweet-card.css" type="text/css" />
@@ -23,58 +25,49 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-
   </head>
 
   <body>
-
-  
     <!-- Top nav bar (fixed) -->
     <nav id="navbar">
       <span>tweeter</span>
       <p><b>Write</b> a new Tweet</p>
     </nav>
     <div id="wrapper">
-
-    <!---Header Section-->
-    <header id="main-header">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>Your Name</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main id="main-content-container">
-      <section id="new-tweet">
-        <h2>Compose Tweet</h2>
-        <div id="alert-container">
-          <p id="alert-text">This message is too long !</p>
+      <!---Header Section-->
+      <header id="main-header">
+        <div>
+          <img src="/images/profile-hex.png" />
         </div>
-        <form id="new-tweet-form" method="POST" action="/tweets">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div id="new-tweet-footer">
-            <button class="primary-btn" type="submit">Tweet</button>
-            <output name="counter" id="counter" for="tweet-text">140</output>
+        <br />
+        <div>
+          <h2>Your Name</h2>
+        </div>
+      </header>
+
+      <!-- Page-specific (main) content here -->
+      <main id="main-content-container">
+        <section id="new-tweet">
+          <h2>Compose Tweet</h2>
+          <div id="alert-container">
+            <p id="alert-text">This message is too long !</p>
           </div>
-        </form>
+          <form id="new-tweet-form" method="POST" action="/tweets">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div id="new-tweet-footer">
+              <button class="primary-btn" type="submit">Tweet</button>
+              <output name="counter" id="counter" for="tweet-text">140</output>
+            </div>
+          </form>
 
-        <div id='tweets-container'>
-
-        </div>
-
-
-
-      </section>
-    </main>
-  </div>
+          <div id="tweets-container"></div>
+        </section>
+      </main>
+    </div>
     <script
-    type="text/javascript"
-    src="/scripts/composer-char-counter.js"
-  ></script>
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </body>
 </html>
