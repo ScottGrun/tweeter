@@ -1,0 +1,12 @@
+#mobile-nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border-top: 1px solid #eeeeef;
+  position: absolute;
+  bottom: 0;
+  height: 3.125rem;
+  z-index: 12;
+  align-items: center;
+  background-color: white;
+}

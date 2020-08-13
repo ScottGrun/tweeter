@@ -1,0 +1,106 @@
+#mobile-tweet {
+  display: flex;
+  width: 100%;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#mobile-tweet-composer {
+  height: 91%;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px 10px 0 0;
+  padding: 1rem;
+}
+
+#mobile-tweet-form {
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#mobile-tweet-form > label {
+  font-weight: 600;
+  color: #837f7f;
+}
+
+#mobile-tweet-form > textarea {
+  border: none;
+  background-color: transparent;
+  margin: 1rem 0;
+  font-weight: 400;
+  font-size: 16px;
+  height: auto;
+  width: 100%;
+}
+
+#mobile-counter-container{
+  display: flex;
+  align-items: center;
+}
+
+#mobile-counter-container > output{
+  margin-right: 1em;
+  font-family: 'Lato';
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+
+#mobile-tweet-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.primary-btn {
+  background-color: #2f80ed;
+  transition: ease-in-out 0.1s;
+  font-size: 18px;
+  color: white;
+  border: none;
+  font-family: 'Inter';
+  padding: 0.55rem 1.25rem;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+  background-color: #4e91e7;
+}
+
+.primary-btn:focus {
+  background-color: #2f80ed;
+}
+
+.secondary-btn {
+  background: none;
+  border: none;
+  color: #424346;
+  font-size: 15px;
+  font-weight: 500;
+
+  font-family: 'Inter';
+}
+
+.danger {
+  color: red;
+}
+
+#alert-container {
+  display: none;
+  justify-content: center;
+  background-color: indianred;
+  color: white;
+  margin: 1rem 0;
+  border: solid 3px red;
+  border-radius: 3px;
+}
+
+#mobile-form-container {
+  display: flex;
+  justify-content: space-between;
+}

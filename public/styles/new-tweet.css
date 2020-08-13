@@ -5,8 +5,12 @@
   justify-content: center;
 }
 
+#new-tweet > h2{
+  display: none;
+}
+
 #new-tweet-form {
-  display: flex;
+  display: none;
   flex-flow: column wrap;
   justify-content: center;
 }

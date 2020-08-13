@@ -37,9 +37,13 @@ $(document).ready(function () {
   <header>
     <div>
       <img class="tweet-author-pic" src=${escape(data.user.avatars)} />
-      <p class="tweet-author">${escape(data.user.name)}</p>
+      <div>
+      <p class="tweet-author">${escape(data.user.name)}</p> 
+      <p class="tweet-author-username">${escape(data.user.handle)}</p>
+      </div>
+    
+
     </div>
-    <p class="tweet-author-username">${escape(data.user.handle)}</p>
   </header>
   <p class="tweet-body">${escape(data.content.text)}</p>
   <footer>

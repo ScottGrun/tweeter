@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       type="text/css"
     />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -19,6 +20,8 @@
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="./styles/tweet-card.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/mobile-nav.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/mobile-new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,13 +33,12 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav id="navbar">
-      <span>tweeter</span>
-      <p><b>Write</b> a new Tweet</p>
+      <p id="logo-text">Tweeper <p></span> </span>
     </nav>
     
     <div id="wrapper">
       <!---Header Section-->
-      <header id="main-header">
+      <!-- <header id="main-header">
         <div>
           <img src="/images/profile-hex.png" />
         </div>
@@ -44,7 +46,7 @@
         <div>
           <h2>Your Name</h2>
         </div>
-      </header>
+      </header> -->
 
       <!-- Page-specific (main) content here -->
       <main id="main-content-container">
@@ -66,6 +68,29 @@
         </section>
       </main>
     </div>
+
+    <section id="mobile-tweet-composer">
+      <form id="mobile-tweet-form" method="POST" action="/tweets">
+        <div id="mobile-form-container">
+          <button class="secondary-btn">Cancel</button>
+          <div id="mobile-counter-container">
+            <output name="counter" id="counter" for="tweet-text">140</output>
+            <button class="primary-btn" type="submit">Tweep</button>
+          </div>
+ 
+        </div>
+        <textarea name="text" placeholder="Tell the world how you feel" id="tweet-text"></textarea>
+      
+      </form>
+    </section>
+
+    <footer id="mobile-nav">
+      <img src="./images/icons/home-outline 1.svg" />
+      <img src="./images/icons/search-outline 1.svg" />
+      <img src="./images/icons/edit-2-outline 1.svg" />
+      <img src="./images/icons/inbox-outline 1.svg" />
+    </footer>
+
     <script
       type="text/javascript"
       src="/scripts/composer-char-counter.js"

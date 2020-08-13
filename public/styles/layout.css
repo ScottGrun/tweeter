@@ -4,7 +4,7 @@
  * Do not modify these two selectors, please
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;400;500;600&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -21,26 +21,26 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #F9FAFC;
   padding: 0;
   font-size: 24px;
+  padding-top: 50px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+p{
+  margin: 0;
+  font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+
+color: #000000;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-#main-content-container{
-  width: 90%;
-  margin: 0 auto;
-}
-
-
-@media (min-width: 360px) { 
-
-
-}
 
 
 /* Large devices (desktops, 992px and up) */
