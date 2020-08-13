@@ -72,6 +72,19 @@ $(document).ready(function () {
     });
   };
 
+  $('#open-tweet-composer').click(() => {
+    $('#mobile-tweet-composer').addClass('show-mobile-composer');
+    $('#mobile-form-container').removeClass('hide')
+
+
+  });
+
+  $('.secondary-btn').click((e) => {
+    e.preventDefault();
+    $('#mobile-tweet-composer').removeClass('show-mobile-composer');
+    $('#mobile-form-container').addClass('hide')
+  });
+
   $(function () {
     const $form = $('#new-tweet-form');
 
@@ -104,10 +117,10 @@ $(document).ready(function () {
         success: () => {
           $('#tweets-container').empty();
           loadTweets();
+          $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
         },
         data: formData
       });
-
     });
   });
 
