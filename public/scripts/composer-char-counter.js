@@ -17,7 +17,7 @@
 //   });
 // });
 
-//Same implementation as above just done in vanilla js
+// Same implementation as above just done in vanilla js
 const counter = document.querySelector('#counter');
 const tweetTextArea = document.querySelector('textarea');
 
@@ -29,4 +29,17 @@ tweetTextArea.addEventListener('keydown', () => {
     counter.classList.remove('danger');
   }
   counter.innerHTML = characterCount;
+});
+
+const mobileCounter = document.querySelector('#mobile-counter');
+const mobileTweetTextArea = document.querySelector('#mobile-textarea');
+
+mobileTweetTextArea.addEventListener('keydown', () => {
+  const characterCount = 140 - mobileTweetTextArea.value.length;
+  if (characterCount < 0) {
+    mobileCounter.classList.add('danger');
+  } else {
+    mobileCounter.classList.remove('danger');
+  }
+  mobileCounter.innerHTML = characterCount;
 });

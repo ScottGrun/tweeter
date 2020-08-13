@@ -7,7 +7,7 @@ $(document).ready(function () {
   // Test / driver code (temporary). Eventually will get this from the server.
 
   const escape = function (str) {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
@@ -74,53 +74,62 @@ $(document).ready(function () {
 
   $('#open-tweet-composer').click(() => {
     $('#mobile-tweet-composer').addClass('show-mobile-composer');
-    $('#mobile-form-container').removeClass('hide')
-
-
+    $('#mobile-form-container').removeClass('hide');
   });
 
   $('.secondary-btn').click((e) => {
     e.preventDefault();
     $('#mobile-tweet-composer').removeClass('show-mobile-composer');
-    $('#mobile-form-container').addClass('hide')
+    $('#mobile-form-container').addClass('hide');
   });
 
-  $(function () {
-    const $form = $('#new-tweet-form');
+  $('#mobile-new-tweet').submit(function (e) {
+    e.preventDefault();
+    const formData = $(this).serialize();
+    // const messageLength = $(this).children('textarea')[0].value.length;
+    $.ajax({
+      type: 'POST',
+      url: 'tweets',
+      success: () => {
+        $('#tweets-container').empty();
+        loadTweets();
+        $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
+      },
+      data: formData
+    });
+  });
 
-    $form.submit(function (e) {
-      e.preventDefault();
+  $('#new-tweet-form').submit(function (e) {
+    e.preventDefault();
 
-      const formData = $('#new-tweet-form').serialize();
+    const formData = $(this).serialize();
 
-      const messageLength = $form.children('textarea')[0].value.length;
+    const messageLength = $(this).children('textarea')[0].value.length;
 
-      const errorMessage = $('#alert-container');
-      //Error handling for bad tweep inputs
-      if (messageLength < 1) {
-        errorMessage.css('display', 'flex');
-        $('#alert-text').text('Message must be more than 0 chars');
-        return;
-      }
+    const errorMessage = $('#alert-container');
+    // Error handling for bad tweep inputs
+    if (messageLength < 1) {
+      errorMessage.css('display', 'flex');
+      $('#alert-text').text('Message must be more than 0 chars');
+      return;
+    }
 
-      if (messageLength > 140) {
-        errorMessage.css('display', 'flex');
-        $('#alert-text').text('Message must be less than 140 chars');
-        return;
-      } else {
-        $('#alert-container').css('display', 'none');
-      }
+    if (messageLength > 140) {
+      errorMessage.css('display', 'flex');
+      $('#alert-text').text('Message must be less than 140 chars');
+      return;
+    }
+    $('#alert-container').css('display', 'none');
 
-      $.ajax({
-        type: 'POST',
-        url: 'tweets',
-        success: () => {
-          $('#tweets-container').empty();
-          loadTweets();
-          $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
-        },
-        data: formData
-      });
+    $.ajax({
+      type: 'POST',
+      url: 'tweets',
+      success: () => {
+        $('#tweets-container').empty();
+        loadTweets();
+        $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
+      },
+      data: formData
     });
   });
 

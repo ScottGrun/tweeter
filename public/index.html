@@ -70,16 +70,16 @@
     </div>
 
     <section  id="mobile-tweet-composer">
-      <form id="mobile-tweet-form" method="POST" action="/tweets">
+      <form  class="mobile-tweet-form" id='mobile-new-tweet' method="POST" action="/tweets">
         <div id="mobile-form-container">
           <button class="secondary-btn">Cancel</button>
           <div id="mobile-counter-container">
-            <output name="counter" id="counter" for="tweet-text">140</output>
+            <output name="counter" id="mobile-counter" for="tweet-text">140</output>
             <button class="primary-btn" type="submit">Tweep</button>
           </div>
  
         </div>
-        <textarea name="text" placeholder="Tell the world how you feel" id="tweet-text"></textarea>
+        <textarea name="text" placeholder="Tell the world how you feel" id="mobile-textarea"></textarea>
       
       </form>
     </section>

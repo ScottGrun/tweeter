@@ -35,30 +35,38 @@ article.tweet-card header > div {
 }
 
 .tweet-author {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   font-family: 'Inter';
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
   line-height: 15px;
 
   color: #1d1f24;
 }
 
 .tweet-author-username {
-  font-family: 'Lato';
+  padding-top: 3px;
+  font-family: 'Inter';
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 12px;
-  color: #A5A5A7;
+  font-size: 12px;
+  line-height: 15px;
+  color: #a5a5a7;
 }
 
 .tweet-body {
-  color: black;
-  font-size: 17px;
-  padding: 15px 0;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  color: #000000;
+
+  mix-blend-mode: normal;
+  opacity: 0.7;
 }
 
 article.tweet-card > footer {
@@ -68,12 +76,11 @@ article.tweet-card > footer {
 }
 
 article.tweet-card > footer > p {
-  font-family: Lato;
+  font-family: 'Lato';
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 26px;
-  color: #A5A5A7;
+  font-size: 12px;
+  color: #a5a5a7;
 }
 
 .tweet-icons-container {
@@ -81,5 +88,6 @@ article.tweet-card > footer > p {
 }
 
 .tweet-icons-container > img {
+  max-height: 36px;
   padding: 0.5rem;
 }

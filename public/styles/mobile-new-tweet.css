@@ -5,9 +5,6 @@
   justify-content: center;
 }
 
-
-
-
 #mobile-tweet-composer {
   height: 0%;
   opacity: 0;
@@ -34,17 +31,18 @@
 }
 
 
-#mobile-tweet-form {
+.mobile-tweet-form {
+  display: flex;
   flex-flow: column wrap;
   justify-content: center;
 }
 
-#mobile-tweet-form > label {
+.mobile-tweet-form > label {
   font-weight: 600;
   color: #837f7f;
 }
 
-#mobile-tweet-form > textarea {
+.mobile-tweet-form > textarea {
   border: none;
   background-color: transparent;
   margin: 1rem 0;
