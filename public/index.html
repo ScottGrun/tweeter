@@ -27,11 +27,14 @@
   </head>
 
   <body>
+
+  
     <!-- Top nav bar (fixed) -->
     <nav id="navbar">
       <span>tweeter</span>
       <p><b>Write</b> a new Tweet</p>
     </nav>
+    <div id="wrapper">
 
     <!---Header Section-->
     <header id="main-header">
@@ -46,7 +49,7 @@
 
     <!-- Page-specific (main) content here -->
     <main id="main-content-container">
-      <section class="new-tweet">
+      <section id="new-tweet">
         <h2>Compose Tweet</h2>
         <div id="alert-container">
           <p id="alert-text">This message is too long !</p>
@@ -68,6 +71,7 @@
 
       </section>
     </main>
+  </div>
     <script
     type="text/javascript"
     src="/scripts/composer-char-counter.js"

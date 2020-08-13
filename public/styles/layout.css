@@ -35,3 +35,33 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+
+
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) { 
+  #wrapper {
+    margin: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  #main-content-container{
+    width: 100%;
+  }
+
+  header {
+    grid-column: 2 / span 4;
+  }
+
+  main{
+    grid-column: 7 / span 5;
+  }
+
+ 
+  
+}
+
