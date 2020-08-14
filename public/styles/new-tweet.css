@@ -90,7 +90,7 @@
   color: red;
 }
 
-#alert-container {
+.alert-container {
   display: none;
   justify-content: center;
   background-color: #ffd3d3;
@@ -100,7 +100,7 @@
   border-radius: 2px;
 }
 
-#alert-container > p {
+.alert-container > p {
   color: rgb(174, 0, 0);
 
 }
