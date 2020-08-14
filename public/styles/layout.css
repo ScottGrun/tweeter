@@ -63,6 +63,17 @@ textarea {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) {
+
+  #new-tweet-form {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+  }
   #main-header {
     display: flex;
   }
@@ -100,16 +111,7 @@ textarea {
 }
 
 @media (min-width: 1440px) {
-  #new-tweet-form {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #c0c0c0;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 3px;
-  }
+
 
   #new-tweet-form > label {
     display: block;

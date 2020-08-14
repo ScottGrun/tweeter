@@ -127,20 +127,20 @@ $(document).ready(function () {
 
     const messageLength = $(this).children('textarea')[0].value.length;
 
-    const errorMessage = $('#alert-container');
+    const errorMessage = $('#desk-alert');
     // Error handling for bad tweep inputs
     if (messageLength < 1) {
       errorMessage.css('display', 'flex');
-      $('#alert-text').text('Message must be more than 0 chars');
+      $('.alert-text').text('Message must be more than 0 chars');
       return;
     }
 
     if (messageLength > 140) {
       errorMessage.css('display', 'flex');
-      $('#alert-text').text('Message must be less than 140 chars');
+      $('.alert-text').text('Message must be less than 140 chars');
       return;
     }
-    $('#alert-container').css('display', 'none');
+    $('.alert-container').css('display', 'none');
 
     $.ajax({
       type: 'POST',

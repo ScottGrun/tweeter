@@ -1,8 +1,8 @@
 // $(document).ready(function () {
-//   // --- our code goes here ---
+// --- our code goes here ---
 
-//   //New Tweet character counter
-//   $('#tweet-text').on('keyup', function () {
+//New Tweet character counter
+//   $('#tweet-text').on('input', function () {
 //     const currentForm = $(this).parent();
 //     const charCounter = $(currentForm).find('div').find('output');
 //     const numOfChars = $(this).val().length;
@@ -17,7 +17,7 @@
 //   });
 // });
 
-// Same implementation as above just done in vanilla js
+// Character counter done in vanilla js rather than jquery see above for jquery version
 const counter = document.querySelector('#counter');
 const tweetTextArea = document.querySelector('textarea');
 
@@ -29,17 +29,4 @@ tweetTextArea.addEventListener('input', () => {
     counter.classList.remove('danger');
   }
   counter.innerHTML = characterCount;
-});
-
-const mobileCounter = document.querySelector('#mobile-counter');
-const mobileTweetTextArea = document.querySelector('#mobile-textarea');
-
-mobileTweetTextArea.addEventListener('keydown', () => {
-  const characterCount = 140 - mobileTweetTextArea.value.length;
-  if (characterCount < 0) {
-    mobileCounter.classList.add('danger');
-  } else {
-    mobileCounter.classList.remove('danger');
-  }
-  mobileCounter.innerHTML = characterCount;
 });
