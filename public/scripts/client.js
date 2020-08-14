@@ -4,17 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  // Test / driver code (temporary). Eventually will get this from the server.
-
+  // Function to prevent XSS
   const escape = function (str) {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Function to create tweet from data obj passed by server
   const createTweetElement = (data) => {
+    // Parse epoch time into readable time
     const parseDate = (unixDate) => {
-      // use human readable variable names
       const currentTime = new Date().getTime();
       const postDate = unixDate;
       const daysSincePost = parseInt(
@@ -32,6 +32,7 @@ $(document).ready(function () {
       return `Tweeped ${daysSincePost} days ago`;
     };
 
+    // Tweet Template
     const $tweet = $(`
 <article class="tweet-card">
   <header>
@@ -41,8 +42,6 @@ $(document).ready(function () {
       <p class="tweet-author">${escape(data.user.name)}</p> 
       <p class="tweet-author-username">${escape(data.user.handle)}</p>
       </div>
-    
-
     </div>
   </header>
   <p class="tweet-body">${escape(data.content.text)}</p>
@@ -60,35 +59,38 @@ $(document).ready(function () {
     return $tweet;
   };
 
+  // Function appends tweets to the dom in chronological order
   const renderTweets = function (tweets) {
     for (let i = tweets.length; i >= 1; i--) {
       $('#tweets-container').append(createTweetElement(tweets[i - 1]));
     }
   };
 
+  // Get tweets from server and passes them to the render function
   const loadTweets = () => {
     $.get('tweets', function (data, status) {
       renderTweets(data);
     });
   };
 
+  // Opens mobile tweet composer
   $('#open-tweet-composer').click(() => {
     $('#mobile-tweet-composer').addClass('show-mobile-composer');
     $('#mobile-form-container').removeClass('hide');
   });
 
+  // Closes mobile tweet composer
   $('.secondary-btn').click((e) => {
     e.preventDefault();
     $('#mobile-tweet-composer').removeClass('show-mobile-composer');
     $('#mobile-form-container').addClass('hide');
   });
 
+  // Submits tweet to server on mobile
   $('#mobile-new-tweet').submit(function (e) {
     e.preventDefault();
     const formData = $(this).serialize();
-
     const messageLength = $(this).children('textarea')[0].value.length;
-
     const errorMessage = $('#mobile-alert');
     // Error handling for bad tweep inputs
     if (messageLength < 1) {
@@ -96,7 +98,6 @@ $(document).ready(function () {
       $('.alert-text').text('Message must be more than 0 chars');
       return;
     }
-
     if (messageLength > 140) {
       errorMessage.css('display', 'flex');
       $('.alert-text').text('Message must be less than 140 chars');
@@ -104,7 +105,6 @@ $(document).ready(function () {
     }
     $('#mobile').css('display', 'none');
 
-    // const messageLength = $(this).children('textarea')[0].value.length;
     $.ajax({
       type: 'POST',
       url: 'tweets',
@@ -113,13 +113,13 @@ $(document).ready(function () {
         loadTweets();
         $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
         $('textarea').val('');
-        $('#mobile-counter').val(140)
-
+        $('#mobile-counter').val(140);
       },
       data: formData
     });
   });
 
+  // Submits tweets to server on desktop
   $('#new-tweet-form').submit(function (e) {
     e.preventDefault();
 
@@ -150,7 +150,7 @@ $(document).ready(function () {
         loadTweets();
         $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
         $('textarea').val('');
-        $('#counter').val(140)
+        $('#counter').val(140);
       },
       data: formData
     });
