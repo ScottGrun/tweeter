@@ -5,8 +5,18 @@
   justify-content: center;
 }
 
-#new-tweet > h2{
+#new-tweet-form > label {
   display: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+  /* identical to box height */
+
+  text-transform: uppercase;
+
+  color: #1d1f24;
 }
 
 #new-tweet-form {
@@ -15,38 +25,56 @@
   justify-content: center;
 }
 
-#new-tweet-form > label {
-  font-weight: 600;
-  color: #837f7f;
-}
-
 #new-tweet-form > textarea {
-  border: none;
-  border-bottom: solid 2px #333333;
-  background-color: transparent;
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+
   margin-bottom: 1rem;
   font-weight: 400;
   font-size: 18px;
 }
-
 
 #new-tweet-footer {
   display: flex;
   justify-content: space-between;
 }
 
-#counter {
-  font-family: 'Bungee';
+#tweet-controls {
+  display: flex;
+  align-items: center;
 }
 
-.primary-btn {
-  background-color: #2f80ed;
-  transition: ease-in-out 0.1s;
-  color: white;
-  border: none;
-  font-family: 'Bungee';
-  border-radius: 3px;
-  padding: 0.25rem 1rem;
+#tweet-options {
+  display: flex;
+  align-items: center;
+}
+
+
+
+#tweet-options > img {
+  max-height: 36px;
+  padding: 0.5rem;
+}
+
+.v-divider {
+  margin: 0 0.5rem;
+
+  width: 1px;
+  background-color: rgb(133, 133, 133);
+  height: 60%;
+}
+
+#counter {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+
+
+.big {
+  padding: .5remar 2rem;
 }
 
 .primary-btn:hover {
@@ -58,16 +86,21 @@
   background-color: #2f80ed;
 }
 
-.danger{
+.danger {
   color: red;
 }
 
-#alert-container{
+#alert-container {
   display: none;
-  justify-content:  center;
-  background-color: indianred;
-  color: white;
-  margin: 1rem 0;
-  border:  solid 3px red;
-  border-radius: 3px;
+  justify-content: center;
+  background-color: #ffd3d3;
+  margin: .5rem 0;
+  padding: .25rem;
+  border: solid 1px red;
+  border-radius: 2px;
+}
+
+#alert-container > p {
+  color: rgb(174, 0, 0);
+
 }

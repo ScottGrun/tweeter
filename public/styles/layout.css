@@ -4,7 +4,7 @@
  * Do not modify these two selectors, please
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -21,37 +21,58 @@ html {
 
 body {
   color: #545149;
-  background-color: #F9FAFC;
+  background-color: #f9fafc;
   padding: 0;
   font-size: 24px;
   padding-top: 50px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-p{
+p {
   margin: 0;
   font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 14px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
 
-color: #000000;
+  color: #000000;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+@media (min-width: 768px) {
+  #tweets-container {
+    width: 90%;
+    margin: 0 auto;
+  }
 
+  .tweet-card {
+    border-top: none;
+    border-bottom: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+  }
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 1024px) { 
-  
-  body{
+@media (min-width: 1024px) {
+
+  #main-header{
+    display: flex;
+  }
+
+  body {
     padding-top: 120px;
   }
 
-  #navbar{
-    background-color: #4056A1;
+  #mobile-nav {
+    display: none;
+  }
+
+  #navbar {
+    height: 60px;
   }
 
   #wrapper {
@@ -61,25 +82,45 @@ color: #000000;
     gap: 24px;
   }
 
-  #main-content-container{
+  #main-content-container {
     width: 100%;
   }
 
   #main-header {
-    margin-top: 2rem;
     grid-column: 1 / span 5;
   }
 
-  main{
-    grid-column: 7 / span 6;
+  main {
+    grid-column: 6 / span 7;
   }
-
-
 }
 
-@media (min-width: 1440px) { 
+@media (min-width: 1440px) {
+  #new-tweet-form {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #C0C0C0;  
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+  }
+
+  #new-tweet-form > label {
+    display: block;
+  }
+
   #wrapper {
     max-width: 1440px;
     margin: 0 auto;
+  }
+
+    #main-header {
+    grid-column: 2 / span 4;
+  }
+
+  main {
+    grid-column: 6 / span 6;
   }
 }

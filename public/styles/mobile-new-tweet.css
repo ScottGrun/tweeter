@@ -75,6 +75,7 @@
 
 .primary-btn {
   background-color: #2f80ed;
+  border-radius: 2px;
   transition: ease-in-out 0.1s;
   font-size: 18px;
   color: white;
@@ -106,15 +107,6 @@
   color: red;
 }
 
-#alert-container {
-  display: none;
-  justify-content: center;
-  background-color: indianred;
-  color: white;
-  margin: 1rem 0;
-  border: solid 3px red;
-  border-radius: 3px;
-}
 
 #mobile-form-container {
   display: flex;
