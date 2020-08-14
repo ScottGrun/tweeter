@@ -21,7 +21,7 @@
 const counter = document.querySelector('#counter');
 const tweetTextArea = document.querySelector('textarea');
 
-tweetTextArea.addEventListener('keydown', () => {
+tweetTextArea.addEventListener('input', () => {
   const characterCount = 140 - tweetTextArea.value.length;
   if (characterCount < 0) {
     counter.classList.add('danger');

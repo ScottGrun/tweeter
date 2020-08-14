@@ -87,7 +87,6 @@ $(document).ready(function () {
     e.preventDefault();
     const formData = $(this).serialize();
 
-
     const messageLength = $(this).children('textarea')[0].value.length;
 
     const errorMessage = $('#mobile-alert');
@@ -113,6 +112,9 @@ $(document).ready(function () {
         $('#tweets-container').empty();
         loadTweets();
         $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
+        $('textarea').val('');
+        $('#mobile-counter').val(140)
+
       },
       data: formData
     });
@@ -147,6 +149,8 @@ $(document).ready(function () {
         $('#tweets-container').empty();
         loadTweets();
         $('#mobile-tweet-composer').removeClass('show-mobile-composer ');
+        $('textarea').val('');
+        $('#counter').val(140)
       },
       data: formData
     });
