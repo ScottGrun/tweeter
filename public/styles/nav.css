@@ -26,3 +26,30 @@ line-height: 30px;
 
 letter-spacing: -0.369231px;
 }
+
+#compose-arrow{
+  animation: bounce 1s linear infinite;
+
+  position: absolute;
+  display: block;
+  width: 24px;
+  margin: 0 auto;
+  left: 48%;
+}
+
+#tweet-cta{
+  font-size: 18px;
+}
+
+#tweet-cta-container{
+  position: relative;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    top: 10px;
+  }
+  50% {
+    top: 15px;
+  }
+}

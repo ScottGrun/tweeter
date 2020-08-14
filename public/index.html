@@ -10,7 +10,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       type="text/css"
     />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
     <!-- App CSS -->
 
@@ -19,7 +22,11 @@
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/tweet-card.css" type="text/css" />
     <link rel="stylesheet" href="./styles/mobile-nav.css" type="text/css" />
-    <link rel="stylesheet" href="./styles/mobile-new-tweet.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="./styles/mobile-new-tweet.css"
+      type="text/css"
+    />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
 
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -28,92 +35,100 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
+    <script type="text/javascript" src="/scripts/helpers.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/mobile.js"></script>
+
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav id="navbar">
-      <p id="logo-text">Tweeper <p></span> </span>
+      <p id="logo-text">Tweeper</p>
+      <div id="tweet-cta-container">
+        <p id="tweet-cta"><b>Post</b> A New Tweet</p>
+        <img id="compose-arrow" src="./images/icons/arrow-ios-downward-outline.svg">
+      </div>
     </nav>
-    
+
     <div id="wrapper">
       <!---Header Section-->
       <header id="main-header">
         <div id="user-profile">
-          <img src="./images/profile.png">
-          
-          <div id="user-info">
-            <h2>Scott Grunerud</h2>
-            <p>@lighthouselabber117</p>
-          </div>
-          
+          <img src="./images/profile.png" />
+
+          <h2>Scott Grunerud</h2>
+          <p>@lighthouselabber117</p>
         </div>
         <div id="header-banner">
           <img src="./images/background.jpg" />
         </div>
-       
       </header>
 
       <!-- Page-specific (main) content here -->
       <main id="main-content-container">
-        <section id="new-tweet">
-          
-          <form id="new-tweet-form" method="POST" action="/tweets">
-            
-            <label for="tweet-text">Tell the world whats on your mind</label>
-            <div class="alert-container" id="desk-alert">
-              <p class="alert-text"></p>
+        <form id="new-tweet-form" method="POST" action="/tweets">
+          <label for="tweet-text">Tell the world whats on your mind</label>
+          <div class="alert-container" id="desk-alert">
+            <p class="alert-text"></p>
+          </div>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div id="new-tweet-footer">
+            <div id="tweet-options">
+              <img src="./images/icons/image-outline.svg" />
+              <img src="./images/icons/attach-2-outline.svg" />
+              <img src="./images/icons/calendar-outline.svg" />
             </div>
-            <textarea name="text" id="tweet-text"></textarea>
-            <div id="new-tweet-footer">
-              <div id="tweet-options">
-                <img src="./images/icons/image-outline.svg">
-                <img src="./images/icons/attach-2-outline.svg">
-                <img src="./images/icons/calendar-outline.svg">
+            <div id="tweet-controls">
+              <output name="counter" id="counter" for="tweet-text">140</output>
+              <div class="v-divider"></div>
 
-              </div>
-              <div id="tweet-controls">
-                <output name="counter" id="counter" for="tweet-text">140</output>
-                <div class="v-divider"></div>
-
-                <button class="big primary-btn" type="submit">Tweet</button>
-
-              </div>
-        
+              <button class="big primary-btn" type="submit">Tweet</button>
             </div>
-          </form>
+          </div>
+        </form>
 
-          <div id="tweets-container"></div>
-        </section>
+        <div id="tweets-container"></div>
       </main>
     </div>
 
-    <section  id="mobile-tweet-composer">
-      <form  class="mobile-tweet-form" id='mobile-new-tweet' method="POST" action="/tweets">
+    <section id="mobile-tweet-composer">
+      <form
+        class="mobile-tweet-form"
+        id="mobile-new-tweet"
+        method="POST"
+        action="/tweets"
+      >
         <div id="mobile-form-container">
-        
           <button class="secondary-btn">Cancel</button>
           <div id="mobile-counter-container">
-            <output name="counter" id="mobile-counter" for="tweet-text">140</output>
+            <output name="counter" id="mobile-counter" for="tweet-text"
+              >140</output
+            >
             <button class="primary-btn" type="submit">Tweep</button>
           </div>
-        
         </div>
         <div class="alert-container" id="mobile-alert">
           <p class="alert-text"></p>
         </div>
-        <textarea name="text" placeholder="Tell the world how you feel" id="mobile-textarea"></textarea>
-      
+        <textarea
+          name="text"
+          placeholder="Tell the world how you feel"
+          id="mobile-textarea"
+        ></textarea>
       </form>
     </section>
 
-    <footer id="mobile-nav">
+    <!-- Come back to this in a few weeks and dynamically move nav around with css -->
+    <!-- Come back to this in a few weeks and dynamically move nav around with css -->
+    <!-- Come back to this in a few weeks and dynamically move nav around with css -->
+
+    <nav id="mobile-nav">
       <img src="./images/icons/home-outline 1.svg" />
       <img src="./images/icons/search-outline 1.svg" />
       <img id="open-tweet-composer" src="./images/icons/edit-2-outline 1.svg" />
       <img src="./images/icons/inbox-outline 1.svg" />
-    </footer>
+    </nav>
 
     <script
       type="text/javascript"

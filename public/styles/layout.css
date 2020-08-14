@@ -108,14 +108,16 @@ textarea {
   main {
     grid-column: 6 / span 7;
   }
+
+  #new-tweet-form > label {
+    display: block;
+  }
 }
 
 @media (min-width: 1440px) {
 
 
-  #new-tweet-form > label {
-    display: block;
-  }
+
 
   #wrapper {
     max-width: 1440px;
